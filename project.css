@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 20px;
+}
+
+#login-box {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  margin: 50px auto;
+  border: 1px solid #1d084a;
+}
+
+#login-box h2 {
+  color: #1d4f86;
+  text-align: center;
+}
+
+#app {
+  display: none;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #094381;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header a {
+  color: #f7baba;
+}
+
+.left-box {
+  width: 480px;
+  float: left;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.right-box {
+  width: 250px;
+  float: right;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 90%;
+  padding: 8px;
+}
+
+button {
+  background-color: #0c2e54;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 100%;
+}
+
+.add-btn {
+  background-color: #124c1f;
+  float: right;
+}
+
+.buy-btn {
+  background-color: #ca8b2df5;
+  color: black;
+  font-weight: bold;
+  width: 100%;
+}

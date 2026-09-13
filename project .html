@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Pharmacy Store</title>
+  <link rel="stylesheet" href="project.css">
+  <script src="project.js"></script>
+</head>
+<body>
+  <div id="login-box">
+    <h2>Login</h2>
+    <p>Username:</p>
+    <input type="text" id="user" placeholder="enter your username - ansh ">
+    <p>Password:</p>
+    <input type="password" id="pass" placeholder="enter your password - 1234">
+    <br><br>
+    <button onclick="login()" class="login-btn">Sign In</button>
+  </div>
+  <div id="app">
+    <div class="header">
+      <h2> Online Pharmacy Store </h2>
+      <p id="user-lbl"></p>
+      <a href="#" onclick="location.reload()">Logout</a>
+    </div>
+    <br>
+    <div class="left-box">
+      <h3>Available Medicines</h3>
+      <div id="med-list"></div>
+    </div>
+    <div class="right-box">
+      <h3>My Cart</h3>
+      <div id="cart-list">Cart is Empty</div>
+      <br>
+      <b>Total Bill: Rs. <span id="total">0</span></b>
+      <br><br>
+      <p>Delivery Address:</p>
+      <input type="text" id="address" placeholder="House No, Street">
+      <br><br>
+      <button onclick="checkout()" class="buy-btn">Place Order</button>
+    </div>
+  </div>
+</body>
+</html>
