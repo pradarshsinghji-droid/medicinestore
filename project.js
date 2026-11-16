@@ -23,9 +23,9 @@ var selectedCategory = "All";
 var discountApplied = false;
 
 function login() {
-  var u = document.getElementById("user").value.trim();
-  var p = document.getElementById("pass").value.trim();
-  if (u === "med" && p === "invertis") {
+ var u = document.getElementById("user").value.trim().toLowerCase();
+var p = document.getElementById("pass").value.trim();
+if ((u === "ansh_med" || u === "ansh" || u === "pradarsh") && (p === "Med@2026" || p === "1234"))  {
     document.getElementById("login-box").style.display = "none";
     document.getElementById("app").style.display = "block";
     document.getElementById("user-lbl").innerText = "Welcome, " + u;
