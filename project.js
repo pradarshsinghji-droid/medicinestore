@@ -25,7 +25,7 @@ var discountApplied = false;
 function login() {
   var u = document.getElementById("user").value.trim();
   var p = document.getElementById("pass").value.trim();
-  if (u === "ansh_med" && p === "Med@2026") {
+  if (u === "med" && p === "invertis") {
     document.getElementById("login-box").style.display = "none";
     document.getElementById("app").style.display = "block";
     document.getElementById("user-lbl").innerText = "Welcome, " + u;
