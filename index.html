@@ -1,42 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Pharmacy Store</title>
+  <title>MediCare - Online Pharmacy Store</title>
   <link rel="stylesheet" href="project.css">
-  <script src="project.js"></script>
 </head>
 <body>
   <div id="login-box">
-    <h2>Login</h2>
-    <p>Username:</p>
-    <input type="text" id="user" placeholder="enter your username - ansh ">
-    <p>Password:</p>
-    <input type="password" id="pass" placeholder="enter your password - 1234">
-    <br><br>
+    <div class="brand-logo">MediCare+</div>
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Sign in to order medicines fast</p>
+    <label>Username</label>
+    <input type="text" id="user" placeholder="e.g. ansh_med">
+    <label>Password</label>
+    <input type="password" id="pass" placeholder="e.g. Med@2026">
     <button onclick="login()" class="login-btn">Sign In</button>
   </div>
   <div id="app">
     <div class="header">
-      <h2> Online Pharmacy Store </h2>
-      <p id="user-lbl"></p>
-      <a href="#" onclick="location.reload()">Logout</a>
+      <div class="logo">MediCare+ <span>Pharmacy</span></div>
+      <div class="user-info">
+        <span id="user-lbl"></span>
+        <button onclick="location.reload()" class="logout-btn">Logout</button>
+      </div>
     </div>
-    <br>
-    <div class="left-box">
-      <h3>Available Medicines</h3>
-      <div id="med-list"></div>
-    </div>
-    <div class="right-box">
-      <h3>My Cart</h3>
-      <div id="cart-list">Cart is Empty</div>
-      <br>
-      <b>Total Bill: Rs. <span id="total">0</span></b>
-      <br><br>
-      <p>Delivery Address:</p>
-      <input type="text" id="address" placeholder="House No, Street">
-      <br><br>
-      <button onclick="checkout()" class="buy-btn">Place Order</button>
+    <div class="main-container">
+      <div class="left-box">
+        <div class="catalog-header">
+          <h3>Available Medicines</h3>
+          <input type="text" id="search-input" onkeyup="filterMedicines()" placeholder="Search medicine or salt...">
+        </div>
+        <div class="category-tabs">
+          <button class="tab-btn active" onclick="filterCategory('All', this)">All</button>
+          <button class="tab-btn" onclick="filterCategory('Fever', this)">Fever</button>
+          <button class="tab-btn" onclick="filterCategory('Pain Relief', this)">Pain Relief</button>
+          <button class="tab-btn" onclick="filterCategory('Antibiotic', this)">Antibiotic</button>
+          <button class="tab-btn" onclick="filterCategory('Wellness', this)">Wellness</button>
+        </div>
+        <div id="med-list" class="med-grid"></div>
+      </div>
+      <div class="right-box">
+        <h3>My Cart (<span id="cart-count">0</span>)</h3>
+        <div id="cart-list" class="cart-items">
+          <p class="empty-msg">Your cart is empty</p>
+        </div>
+        <div class="promo-section">
+          <input type="text" id="promo-code" placeholder="Coupon: FIRST20">
+          <button onclick="applyPromo()" class="promo-btn">Apply</button>
+        </div>
+        <small id="promo-msg" class="promo-status"></small>
+        <div class="bill-summary">
+          <div class="bill-row"><span>Subtotal:</span> <span>Rs. <span id="subtotal">0</span></span></div>
+          <div class="bill-row discount-row"><span>Discount (20%):</span> <span>- Rs. <span id="discount">0</span></span></div>
+          <div class="bill-row"><span>Delivery Fee:</span> <span class="free-tag">FREE</span></div>
+          <hr>
+          <div class="bill-row total-row"><span>Total Payable:</span> <span>Rs. <span id="total">0</span></span></div>
+        </div>
+        <div class="rx-upload">
+          <label for="rx-file">Upload Prescription (If Rx item in cart):</label>
+          <input type="file" id="rx-file" accept="image/*,.pdf">
+        </div>
+        <div class="checkout-details">
+          <label>Delivery Address:</label>
+          <input type="text" id="address" placeholder="House No, Street, City">
+          <label>Payment Method:</label>
+          <select id="payment-method">
+            <option value="UPI / QR Code">UPI / QR Code</option>
+            <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+            <option value="Debit / Credit Card">Debit / Credit Card</option>
+          </select>
+        </div>
+        <button onclick="checkout()" class="buy-btn">Place Order</button>
+      </div>
     </div>
   </div>
+  <div id="receipt-modal" class="modal">
+    <div class="modal-content">
+      <h2>Order Confirmed!</h2>
+      <p class="order-id">Order ID: #<span id="rec-order-id"></span></p>
+      <div id="receipt-details" class="receipt-box"></div>
+      <button onclick="closeModal()" class="login-btn">Continue Shopping</button>
+    </div>
+  </div>
+  <script src="project.js"></script>
 </body>
 </html>
